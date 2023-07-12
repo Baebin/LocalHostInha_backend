@@ -20,7 +20,7 @@
 - Language: Java (JDK 17)
 - Build Tool: Gradle
 - Using Library:
-  1. [Spring-Boot-Starter-Devtools](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-devtools)
+  1. [Spring-Boot-Devtools](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools)
 
 </br>
 
