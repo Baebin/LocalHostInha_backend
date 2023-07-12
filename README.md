@@ -20,15 +20,35 @@
 - Language: Java (JDK 17)
 - Build Tool: Gradle
 - Using Library:
-  1. [Spring-Boot-Devtools](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools)
+  1. [Spring-Boot-Starter-Web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web)
+  2. [Spring-Boot-Starter-Data-Jpa](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa)
+  3. [Spring-Boot-Devtools](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools)
+  4. [MySQL Connector/J](https://mvnrepository.com/artifact/com.mysql/mysql-connector-j)
+  5. [Lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok)
 
 </br>
 
 ## 3. API
 
-| Type | Function | Method | URL | Parameter | Return |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | |
+| Type | Function | Method | URL | Parameter | Dto | Return |
+| :---: | --- | --- | --- | --- | --- | --- |
+| Account | validate | POST | /api/account/validate | | AccountRequestDto | ResponseEntity.ok |
+| | signUp | POST | /api/account/signup | | AccountRequestDto | ResponseEntity.ok |
+| | signIn | POST | /api/account/signin | | AccountRequestDto | ResponseEntity.ok |
+| for Debug | | | | | | |
+| Account | GET | testValidate | /api/test/account/validate | ?id={id} | | ResponseEntity.ok |
+| | GET | testSignUp | /api/test/account/signup | ?id={id}&pw={pw} | | ResponseEntity.ok |
+| | GET | testSignIn | /api/test/account/signin | ?id={id}&pw={pw} | | ResponseEntity.ok |
+
+| Dto | Data | Type |
+| --- | --- | --- |
+| AccountRequestDto | id | String |
+| | pw | String |
+
+| Response | Value |
+| --- | --- |
+| ResponseEntity.ok | true |
+| | false |
 
 </br>
 
