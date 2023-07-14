@@ -1,11 +1,11 @@
 package com.piebin.web.geomap;
 
-import com.piebin.web.dto.GeoMapRequestDto;
+import com.piebin.web.dto.GeoMapGetRequestDto;
 
 public class GeoMapCalculator {
     private static double EARTH_RADIUS = 40075 * 1000;
 
-    public static double get(GeoMapRequestDto dtoA, GeoMapRequestDto dtoB) {
+    public static double get(GeoMapGetRequestDto dtoA, GeoMapGetRequestDto dtoB) {
         double aX = dtoA.getCoord_x();
         double aY = dtoA.getCoord_y();
 

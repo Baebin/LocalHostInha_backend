@@ -1,11 +1,15 @@
 package com.piebin.web.controller;
 
+import com.piebin.web.domain.GeoMap;
+import com.piebin.web.dto.GeoMapGetRequestDto;
 import com.piebin.web.dto.GeoMapRequestDto;
 import com.piebin.web.geomap.GeoMapCalculator;
 import com.piebin.web.repository.GeoMapRepository;
 import com.piebin.web.service.GeoMapService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,14 +28,21 @@ public class GeoMapController {
         return log;
     }
 
+    @PostMapping("/api/geomap/get")
+    public String get(
+            @RequestBody GeoMapGetRequestDto dto) {
+        List<GeoMap> list = service.get(dto);
+        return service.getJson(list);
+    }
+
     @GetMapping("/api/geomap/distance")
     public double getDistance(
             @RequestParam("x1") double x1,
             @RequestParam("y1") double y1,
             @RequestParam("x2") double x2,
             @RequestParam("y2") double y2) {
-        GeoMapRequestDto dtoA = new GeoMapRequestDto();
-        GeoMapRequestDto dtoB = new GeoMapRequestDto();
+        GeoMapGetRequestDto dtoA = new GeoMapGetRequestDto();
+        GeoMapGetRequestDto dtoB = new GeoMapGetRequestDto();
         dtoA.setCoord_x(x1);
         dtoA.setCoord_y(y1);
         dtoB.setCoord_x(x2);
@@ -44,7 +55,7 @@ public class GeoMapController {
     //
 
     @GetMapping("/api/test/geomap/save")
-    public String save(
+    public String testSave(
             @RequestParam("name") String name,
             @RequestParam("coord_x") double coord_x,
             @RequestParam("coord_y") double coord_y) {
@@ -58,5 +69,17 @@ public class GeoMapController {
                 + "coord_x: " + dto.getCoord_x() + "\n"
                 + "coord_y: " + dto.getCoord_y();
         return log;
+    }
+
+    @GetMapping("/api/geomap/get")
+    public String testGet(
+            @RequestParam("coord_x") double coord_x,
+            @RequestParam("coord_y") double coord_y) {
+        GeoMapGetRequestDto dto = new GeoMapGetRequestDto();
+        dto.setCoord_x(coord_x);
+        dto.setCoord_y(coord_y);
+
+        List<GeoMap> list = service.get(dto);
+        return service.getJson(list);
     }
 }
