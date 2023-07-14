@@ -3,7 +3,6 @@ package com.piebin.web.service;
 import com.piebin.web.domain.Account;
 import com.piebin.web.domain.Post;
 import com.piebin.web.dto.PostRequestDto;
-import com.piebin.web.dto.PostSaveRequestDto;
 import com.piebin.web.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

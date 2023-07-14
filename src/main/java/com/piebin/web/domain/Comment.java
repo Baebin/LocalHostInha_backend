@@ -3,7 +3,6 @@ package com.piebin.web.domain;
 import com.piebin.web.dto.CommentRequestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
