@@ -3,7 +3,6 @@ package com.piebin.web.service;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.piebin.web.domain.GeoMap;
-import com.piebin.web.domain.Post;
 import com.piebin.web.dto.GeoMapGetRequestDto;
 import com.piebin.web.dto.GeoMapRequestDto;
 import com.piebin.web.geomap.GeoMapCalculator;
@@ -20,7 +19,7 @@ import java.util.List;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class GeoMapService {
-    static final double MAX_DISTANCE = 1000;
+    static final double MAX_DISTANCE = 3000;
 
     private final GeoMapRepository repository;
 
