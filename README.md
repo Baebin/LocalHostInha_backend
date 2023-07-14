@@ -44,7 +44,7 @@
 | Account | testValidate | GET | /api/test/account/validate | ?id={id} | | ResponseEntity.ok |
 | | testSignUp | GET | /api/test/account/signup | ?id={id}&name={name}&pw={pw}&email={email} | | ResponseEntity.ok |
 | | testSignIn | GET | /api/test/account/signin | ?id={id}&pw={pw} | | ResponseEntity.ok |
-| | testGetInfo | POST | /api/test/account/getinfo | ?id={id} | | Json |
+| | testGetInfo | GET | /api/test/account/getinfo | ?id={id} | | Json |
 | Post | save | POST | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
 
 | Dto | Data | Type |
