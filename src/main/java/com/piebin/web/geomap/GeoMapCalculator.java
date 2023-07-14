@@ -12,9 +12,9 @@ public class GeoMapCalculator {
         double bX = dtoB.getCoord_x();
         double bY = dtoB.getCoord_y();
 
-        double theta = aX - bX;
-        double dist = Math.sin(deg2rad(aY)) * Math.sin(deg2rad(bY))
-                + Math.cos(deg2rad(aY)) * Math.cos(deg2rad(bY)) * Math.cos(deg2rad(theta));
+        double theta = aY - bY;
+        double dist = Math.sin(deg2rad(aX)) * Math.sin(deg2rad(bX))
+                + Math.cos(deg2rad(aX)) * Math.cos(deg2rad(bX)) * Math.cos(deg2rad(theta));
 
         dist = Math.acos(dist);
         dist = rad2deg(dist);
