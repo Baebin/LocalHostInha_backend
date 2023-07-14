@@ -1,18 +1,19 @@
 package com.piebin.web.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 public class Account {
     @Id
     @Column(name = "idx")
@@ -30,12 +31,25 @@ public class Account {
     @NonNull
     private String role;
 
+    @JsonIgnore
     @CreatedDate
     private LocalDateTime registration_date;
 
-    @Builder
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.EAGER)
+    @Builder.Default
+    private Set<Post> posts = new HashSet<>();
+
+    // NoArgsConstructor
+    public Account() {}
+
     public Account(String id, String password) {
         this.id = id;
         this.password = password;
+    }
+
+    public void addPost(Post post) {
+        posts.add(post);
+        post.setAccount(this);
     }
 }
