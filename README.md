@@ -41,14 +41,21 @@
 | | getPosts | GET | /api/post/search | ?page={page}&size={size} | | Json |
 | for Debug | | | | | | |
 | Account | testValidate | GET | /api/test/account/validate | ?id={id} | | ResponseEntity.ok |
-| | testSignUp | GET | /api/test/account/signup | ?id={id}&pw={pw} | | ResponseEntity.ok |
+| | testSignUp | GET | /api/test/account/signup | ?id={id}&name={name}&pw={pw}&email={email} | | ResponseEntity.ok |
 | | testSignIn | GET | /api/test/account/signin | ?id={id}&pw={pw} | | ResponseEntity.ok |
 | Post | save | POST | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
 
 | Dto | Data | Type |
 | --- | --- | --- |
 | AccountRequestDto | id | String |
+| | name | String |
 | | pw | String |
+| | email | String |
+| PostRequestDto | title | String |
+| | description | String |
+| PostSaveRequestDto | id | String |
+| | title | String |
+| | description | String |
 
 | Response | Value |
 | --- | --- |
