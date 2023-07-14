@@ -39,17 +39,11 @@ public class AccountService {
 
         JsonObject jo = new JsonObject();
         if (optional.isPresent()) {
-            JsonArray ja = new JsonArray();
-
             Account account = optional.get();
-            JsonObject jo_post = new JsonObject();
-            jo_post.addProperty("name", account.getName());
-            jo_post.addProperty("role", account.getRole());
-            jo_post.addProperty("email", account.getEmail());
-            jo_post.addProperty("uid", account.getIdx());
-            ja.add(jo_post);
-
-            jo.add("data", ja);
+            jo.addProperty("name", account.getName());
+            jo.addProperty("role", account.getRole());
+            jo.addProperty("email", account.getEmail());
+            jo.addProperty("uid", account.getIdx());
         }
         return jo.toString();
     }
