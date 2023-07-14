@@ -36,6 +36,7 @@
 | Account | validate | POST | /api/account/validate | | AccountRequestDto | ResponseEntity.ok |
 | | signUp | POST | /api/account/signup | | AccountRequestDto | ResponseEntity.ok |
 | | signIn | POST | /api/account/signin | | AccountSignInRequestDto | ResponseEntity.ok |
+| | getInfo | POST | /api/account/getinfo | | AccountGetInfoRequestDto | Json |
 | Post | save | POST | /api/post/save | | PostSaveRequestDto | ResponseEntity.ok |
 | | getPost | GET | /api/post/get | ?id={id} | | Json |
 | | getPosts | GET | /api/post/search | ?page={page}&size={size} | | Json |
@@ -43,6 +44,7 @@
 | Account | testValidate | GET | /api/test/account/validate | ?id={id} | | ResponseEntity.ok |
 | | testSignUp | GET | /api/test/account/signup | ?id={id}&name={name}&pw={pw}&email={email} | | ResponseEntity.ok |
 | | testSignIn | GET | /api/test/account/signin | ?id={id}&pw={pw} | | ResponseEntity.ok |
+| | testGetInfo | POST | /api/test/account/getinfo | ?id={id} | | Json |
 | Post | save | POST | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
 
 | Dto | Data | Type |
@@ -53,6 +55,7 @@
 | | email | String |
 | AccountSignInRequestDto | id | String |
 | | pw | String |
+| AccountGetInfoRequestDto | id | String |
 | PostRequestDto | title | String |
 | | description | String |
 | PostSaveRequestDto | id | String |
