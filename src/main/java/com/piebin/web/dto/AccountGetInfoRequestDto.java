@@ -3,7 +3,6 @@ package com.piebin.web.dto;
 import lombok.Data;
 
 @Data
-public class AccountSignInDto {
+public class AccountGetInfoRequestDto {
     private String id;
-    private String pw;
 }

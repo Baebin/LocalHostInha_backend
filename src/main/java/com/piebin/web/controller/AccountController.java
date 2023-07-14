@@ -1,8 +1,9 @@
 package com.piebin.web.controller;
 
 import com.piebin.web.domain.Account;
+import com.piebin.web.dto.AccountGetInfoRequestDto;
 import com.piebin.web.dto.AccountRequestDto;
-import com.piebin.web.dto.AccountSignInDto;
+import com.piebin.web.dto.AccountSignInRequestDto;
 import com.piebin.web.repository.AccountRepository;
 import com.piebin.web.service.AccountService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,6 @@ public class AccountController {
         Optional<Account> account = repository.findById(dto.getId());
         if (account.isPresent())
             return ResponseEntity.ok(false);
-
         return ResponseEntity.ok(true);
     }
 
@@ -39,13 +39,20 @@ public class AccountController {
 
     @PostMapping("/api/account/signin")
     public ResponseEntity<Boolean> signIn(
-            @RequestBody AccountSignInDto dto) {
+            @RequestBody AccountSignInRequestDto dto) {
         Optional<Account> account = repository.findById(dto.getId());
         if (!account.isPresent())
             return ResponseEntity.ok(false);
         if (!account.get().getPassword().equals(dto.getPw()))
             return ResponseEntity.ok(false);
         return ResponseEntity.ok(true);
+    }
+
+    @PostMapping("/api/account/getinfo")
+    public String getInfo(
+            @RequestBody AccountGetInfoRequestDto dto
+    ) {
+        return service.getInfo(dto);
     }
 
     //
@@ -91,5 +98,13 @@ public class AccountController {
         if (!account.get().getPassword().equals(pw))
             return ResponseEntity.ok(false);
         return ResponseEntity.ok(true);
+    }
+
+    @GetMapping("/api/test/account/getinfo")
+    public String getInfo(
+            @RequestParam("id") String id) {
+        AccountGetInfoRequestDto dto = new AccountGetInfoRequestDto();
+        dto.setId(id);
+        return service.getInfo(dto);
     }
 }
