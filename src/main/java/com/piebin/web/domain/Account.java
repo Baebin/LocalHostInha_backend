@@ -31,6 +31,10 @@ public class Account {
     @NonNull
     private String role;
 
+    @NonNull
+    @Builder.Default
+    private Long point = 0L;
+
     @JsonIgnore
     @CreatedDate
     private LocalDateTime registration_date;
@@ -46,6 +50,13 @@ public class Account {
     public Account(String id, String password) {
         this.id = id;
         this.password = password;
+    }
+
+    public Account(String id, String name, String password, String email) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.email = email;
     }
 
     public void addPost(Post post) {

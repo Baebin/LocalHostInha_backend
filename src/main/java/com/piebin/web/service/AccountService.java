@@ -20,9 +20,10 @@ public class AccountService {
     public Account register(AccountRequestDto dto) {
         Account account = new Account(
                 dto.getId(),
-                dto.getPw()
+                dto.getPw(),
+                dto.getName(),
+                dto.getEmail()
         );
-        account.setName(dto.getId());
         account.setRegistration_date(LocalDateTime.now());
         account.setRole(Authority.ROLE_USER.name());
         return repository.save(account);

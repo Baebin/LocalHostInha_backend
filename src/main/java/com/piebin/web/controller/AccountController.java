@@ -64,7 +64,9 @@ public class AccountController {
     @GetMapping("/api/test/account/signup")
     public ResponseEntity<Boolean> testSignUp(
             @RequestParam("id") String id,
-            @RequestParam("pw") String pw) {
+            @RequestParam("pw") String pw,
+            @RequestParam("name") String name,
+            @RequestParam("email") String email) {
         Optional<Account> account = repository.findById(id);
         if (account.isPresent())
             // throw new IllegalArgumentException("사용할 수 없는 아이디입니다.");
@@ -72,6 +74,8 @@ public class AccountController {
         AccountRequestDto dto = new AccountRequestDto();
         dto.setId(id);
         dto.setPw(pw);
+        dto.setName(name);
+        dto.setEmail(email);
         service.register(dto);
         return ResponseEntity.ok(true);
     }
