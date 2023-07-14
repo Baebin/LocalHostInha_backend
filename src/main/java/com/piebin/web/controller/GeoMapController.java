@@ -71,7 +71,7 @@ public class GeoMapController {
         return log;
     }
 
-    @GetMapping("/api/geomap/get")
+    @GetMapping("/api/test/geomap/get")
     public String testGet(
             @RequestParam("coord_x") double coord_x,
             @RequestParam("coord_y") double coord_y) {
