@@ -2,6 +2,7 @@ package com.piebin.web.controller;
 
 import com.piebin.web.domain.Account;
 import com.piebin.web.dto.AccountRequestDto;
+import com.piebin.web.dto.AccountSignInDto;
 import com.piebin.web.repository.AccountRepository;
 import com.piebin.web.service.AccountService;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +39,7 @@ public class AccountController {
 
     @PostMapping("/api/account/signin")
     public ResponseEntity<Boolean> signIn(
-            @RequestBody AccountRequestDto dto) {
+            @RequestBody AccountSignInDto dto) {
         Optional<Account> account = repository.findById(dto.getId());
         if (!account.isPresent())
             return ResponseEntity.ok(false);

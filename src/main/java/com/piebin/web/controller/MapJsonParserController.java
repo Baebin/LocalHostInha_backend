@@ -1,6 +1,6 @@
 package com.piebin.web.controller;
 
-import com.piebin.web.json.GeoMapJsonParser;
+import com.piebin.web.geomap.GeoMapJsonParser;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

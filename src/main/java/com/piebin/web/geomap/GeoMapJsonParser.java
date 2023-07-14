@@ -1,4 +1,4 @@
-package com.piebin.web.json;
+package com.piebin.web.geomap;
 
 import com.google.gson.JsonParser;
 import org.slf4j.Logger;
