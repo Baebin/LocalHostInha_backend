@@ -20,8 +20,8 @@ public class AccountService {
     public Account register(AccountRequestDto dto) {
         Account account = new Account(
                 dto.getId(),
-                dto.getPw(),
                 dto.getName(),
+                dto.getPw(),
                 dto.getEmail()
         );
         account.setRegistration_date(LocalDateTime.now());

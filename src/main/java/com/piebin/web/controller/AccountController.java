@@ -64,8 +64,8 @@ public class AccountController {
     @GetMapping("/api/test/account/signup")
     public ResponseEntity<Boolean> testSignUp(
             @RequestParam("id") String id,
-            @RequestParam("pw") String pw,
             @RequestParam("name") String name,
+            @RequestParam("pw") String pw,
             @RequestParam("email") String email) {
         Optional<Account> account = repository.findById(id);
         if (account.isPresent())
@@ -73,8 +73,8 @@ public class AccountController {
             return ResponseEntity.ok(false);
         AccountRequestDto dto = new AccountRequestDto();
         dto.setId(id);
-        dto.setPw(pw);
         dto.setName(name);
+        dto.setPw(pw);
         dto.setEmail(email);
         service.register(dto);
         return ResponseEntity.ok(true);
