@@ -50,7 +50,7 @@
 | | testGetInfo | GET | /api/test/account/getinfo | ?id={id} | | Json |
 | Post | save | POST | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
 | GeoMap | testSave | GET | /api/test/geomap/save | ?name={name}&coord_x={coord_x}&coord_y={coord_y} | | String |
-| | testGet | POST | /api/test/geomap/get | ?coord_x={coord_x}&coord_y={coord_y} | | Json |
+| | testGet | GET | /api/test/geomap/get | ?coord_x={coord_x}&coord_y={coord_y} | | Json |
 
 | Dto | Data | Type |
 | --- | --- | --- |
