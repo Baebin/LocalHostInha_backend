@@ -40,12 +40,17 @@
 | Post | save | POST | /api/post/save | | PostSaveRequestDto | ResponseEntity.ok |
 | | getPost | GET | /api/post/get | ?id={id} | | Json |
 | | getPosts | GET | /api/post/search | ?page={page}&size={size} | | Json |
+| GeoMap | save | POST | /api/geomap/save | | GeoMapRequestDto | String |
+| | get | POST | /api/geomap/get | | GeoMapGetRequestDto | Json |
+| | getDistance | GET | /api/geomap/getdistance | ?x1={x1}&y1={y1}&x2={x2}&y2={y2} | | Double |
 | for Debug | | | | | | |
 | Account | testValidate | GET | /api/test/account/validate | ?id={id} | | ResponseEntity.ok |
 | | testSignUp | GET | /api/test/account/signup | ?id={id}&name={name}&pw={pw}&email={email} | | ResponseEntity.ok |
 | | testSignIn | GET | /api/test/account/signin | ?id={id}&pw={pw} | | ResponseEntity.ok |
 | | testGetInfo | GET | /api/test/account/getinfo | ?id={id} | | Json |
 | Post | save | POST | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
+| GeoMap | testSave | GET | /api/test/geomap/save | ?name={name}&coord_x={coord_x}&coord_y={coord_y} | | String |
+| | testGet | GET | /api/test/geomap/get | ?coord_x={coord_x}&coord_y={coord_y} | | Json |
 
 | Dto | Data | Type |
 | --- | --- | --- |
@@ -61,6 +66,11 @@
 | PostSaveRequestDto | id | String |
 | | title | String |
 | | description | String |
+| GeoMapRequestDto | name | String |
+| | coord_x | String |
+| | coord_y | String |
+| GeoMapGetRequestDto | coord_x | String |
+| | coord_y | String |
 
 | Response | Value |
 | --- | --- |
