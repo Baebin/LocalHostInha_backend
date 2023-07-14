@@ -35,7 +35,7 @@
 | :---: | --- | --- | --- | --- | --- | --- |
 | Account | validate | POST | /api/account/validate | | AccountRequestDto | ResponseEntity.ok |
 | | signUp | POST | /api/account/signup | | AccountRequestDto | ResponseEntity.ok |
-| | signIn | POST | /api/account/signin | | AccountRequestDto | ResponseEntity.ok |
+| | signIn | POST | /api/account/signin | | AccountSignInRequestDto | ResponseEntity.ok |
 | Post | save | POST | /api/post/save | | PostSaveRequestDto | ResponseEntity.ok |
 | | getPost | GET | /api/post/get | ?id={id} | | Json |
 | | getPosts | GET | /api/post/search | ?page={page}&size={size} | | Json |
@@ -51,6 +51,8 @@
 | | name | String |
 | | pw | String |
 | | email | String |
+| AccountSignInRequestDto | id | String |
+| | pw | String |
 | PostRequestDto | title | String |
 | | description | String |
 | PostSaveRequestDto | id | String |
