@@ -6,7 +6,6 @@ import com.piebin.web.domain.Post;
 import com.piebin.web.dto.CommentGetRequestDto;
 import com.piebin.web.dto.CommentRequestDto;
 import com.piebin.web.repository.AccountRepository;
-import com.piebin.web.repository.CommentRepository;
 import com.piebin.web.repository.PostRepository;
 import com.piebin.web.service.CommentService;
 import lombok.RequiredArgsConstructor;

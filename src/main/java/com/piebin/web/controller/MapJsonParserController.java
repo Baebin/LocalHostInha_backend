@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @RestController
 public class MapJsonParserController {
-    @GetMapping("/api/test/parser")
+    @GetMapping("/api/parser")
     public String run() throws IOException {
         GeoMapJsonParser parser = new GeoMapJsonParser();
 
