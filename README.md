@@ -38,6 +38,7 @@
 | | signIn | POST | /api/account/signin | | AccountSignInRequestDto | ResponseEntity.ok |
 | | getInfo | POST | /api/account/getinfo | | AccountGetInfoRequestDto | Json |
 | Post | save | POST | /api/post/save | | PostSaveRequestDto | ResponseEntity.ok |
+| | remove | POST | /api/post/remove | | PostRemoveRequestDto | ResponseEntity.ok |
 | | getPost | GET | /api/post/get | ?id={id} | | Json |
 | | getPosts | GET | /api/post/search | ?page={page}&size={size} | | Json |
 | GeoMap | save | POST | /api/geomap/save | | GeoMapRequestDto | String |
@@ -48,7 +49,8 @@
 | | testSignUp | GET | /api/test/account/signup | ?id={id}&name={name}&pw={pw}&email={email} | | ResponseEntity.ok |
 | | testSignIn | GET | /api/test/account/signin | ?id={id}&pw={pw} | | ResponseEntity.ok |
 | | testGetInfo | GET | /api/test/account/getinfo | ?id={id} | | Json |
-| Post | save | POST | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
+| Post | save | GET | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
+| | remove | GET | /api/test/post/remove | ?post_idx={post_idx} | | ResponseEntity.ok |
 | GeoMap | testSave | GET | /api/test/geomap/save | ?name={name}&coord_x={coord_x}&coord_y={coord_y} | | String |
 | | testGet | GET | /api/test/geomap/get | ?coord_x={coord_x}&coord_y={coord_y} | | Json |
 
@@ -66,6 +68,12 @@
 | PostSaveRequestDto | id | String |
 | | title | String |
 | | description | String |
+| PostRemoveRequestDto | post_idx | int |
+| CommentRequestDto | account_idx | int |
+| | post_idx | int |
+| | text | String |
+| PostRemoveRequestDto | post_idx | int |
+| PostRemoveRequestDto | post_idx | int |
 | GeoMapRequestDto | name | String |
 | | coord_x | String |
 | | coord_y | String |
