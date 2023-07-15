@@ -46,6 +46,7 @@
 | GeoMap | save | POST | /api/geomap/save | | GeoMapRequestDto | String |
 | | get | POST | /api/geomap/get | | GeoMapGetRequestDto | Json |
 | | getDistance | GET | /api/geomap/getdistance | ?x1={x1}&y1={y1}&x2={x2}&y2={y2} | | Double |
+| MapJsonParser | save | GET | /api/parser | | | String |
 | for Debug | | | | | | |
 | Account | testValidate | GET | /api/test/account/validate | ?id={id} | | ResponseEntity.ok |
 | | testSignUp | GET | /api/test/account/signup | ?id={id}&name={name}&pw={pw}&email={email} | | ResponseEntity.ok |
