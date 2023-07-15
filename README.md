@@ -4,8 +4,9 @@
 1. [Tech Stack](#1-tech-stack)
 2. [Environment](#2-environment)
 3. [API](#3-api)
-4. [Frontend](#4-frontend)
-5. [Collaborators](#5-collaborators)
+4. [ERD](#4-erd)
+5. [Frontend](#5-frontend)
+6. [Collaborators](#6-collaborators)
 
 </br>
 
@@ -97,7 +98,12 @@
 
 </br>
 
-## 5. Collaborators
+## 5. ERD
+![ERD](https://github.com/Baebin/LocalhostInha_backend/assets/63220297/f51d8b4a-1510-4c8b-a9cf-a568e7aaecd4)
+
+</br>
+
+## 6. Collaborators
 | ID | Develop Part |
 | --- | :---: |
 | [Aspyn04](https://github.com/Aspyn04) | UI |
