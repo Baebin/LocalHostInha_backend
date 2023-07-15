@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.piebin.web.domain.Account;
 import com.piebin.web.domain.Post;
+import com.piebin.web.dto.PostRemoveRequestDto;
 import com.piebin.web.dto.PostRequestDto;
 import com.piebin.web.dto.PostSaveRequestDto;
 import com.piebin.web.repository.AccountRepository;
@@ -43,6 +44,19 @@ public class PostController {
         return ResponseEntity.ok(true);
     }
 
+    @PostMapping("/api/post/remove")
+    public ResponseEntity<Boolean> remove(
+            @RequestBody PostRemoveRequestDto dto) {
+        Optional<Post> optional = postRepository.findByIdx(dto.getPost_idx());
+        if (!optional.isPresent())
+            return ResponseEntity.ok(false);
+        Post post = optional.get();
+        if (post.getStatus() != 0L)
+            return ResponseEntity.ok(false);
+        postService.remove(post);
+        return ResponseEntity.ok(true);
+    }
+
     @GetMapping("/api/post/get")
     public String getPost(
             @RequestParam("id") int id) {
@@ -65,7 +79,6 @@ public class PostController {
 
             jo.add("data", ja);
         }
-
         return jo.toString();
     }
 
@@ -94,7 +107,7 @@ public class PostController {
     //
 
     @GetMapping("/api/test/post/save")
-    public ResponseEntity<Boolean> save(
+    public ResponseEntity<Boolean> testSave(
             @RequestParam("id") String id,
             @RequestParam("title") String title,
             @RequestParam("description") String description) {
@@ -107,6 +120,19 @@ public class PostController {
         postRequestDto.setTitle(title);
         postRequestDto.setDescription(description);
         postService.save(account.get(), postRequestDto);
+        return ResponseEntity.ok(true);
+    }
+
+    @GetMapping("/api/test/post/remove")
+    public ResponseEntity<Boolean> testRemove(
+            @RequestParam("post_idx") int post_idx) {
+        Optional<Post> optional = postRepository.findByIdx(post_idx);
+        if (!optional.isPresent())
+            return ResponseEntity.ok(false);
+        Post post = optional.get();
+        if (post.getStatus() != 0L)
+            return ResponseEntity.ok(false);
+        postService.remove(post);
         return ResponseEntity.ok(true);
     }
 }

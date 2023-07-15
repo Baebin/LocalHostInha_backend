@@ -33,8 +33,7 @@ public class GeoMapService {
         return repository.save(geoMap);
     }
 
-    public List<GeoMap> get(
-            @RequestBody GeoMapGetRequestDto dto) {
+    public List<GeoMap> get(GeoMapGetRequestDto dto) {
         List<GeoMap> list = repository.findAll();
         List<GeoMap> maps = new ArrayList<>();
         for (GeoMap geoMap : list) {

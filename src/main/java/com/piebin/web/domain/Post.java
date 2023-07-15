@@ -34,6 +34,11 @@ public class Post {
     @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
+    @Builder.Default
+    // 0: Default, 1: Deleted
+    private Long status = 0L;
+
     @CreatedDate
     private LocalDateTime created_time;
 

@@ -50,8 +50,7 @@ public class AccountController {
 
     @PostMapping("/api/account/getinfo")
     public String getInfo(
-            @RequestBody AccountGetInfoRequestDto dto
-    ) {
+            @RequestBody AccountGetInfoRequestDto dto) {
         return service.getInfo(dto);
     }
 

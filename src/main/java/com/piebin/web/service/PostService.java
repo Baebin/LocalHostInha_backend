@@ -23,8 +23,13 @@ public class PostService {
         post.setDescription(dto.getDescription());
         post.setCreated_time(LocalDateTime.now());
         post.setEdited_time(LocalDateTime.now());
+        post.setStatus(0L);
         account.addPost(post);
 
         return repository.save(post);
+    }
+
+    public void remove(Post post) {
+        post.setStatus(1L);
     }
 }
