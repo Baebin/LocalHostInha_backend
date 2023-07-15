@@ -99,7 +99,7 @@
 </br>
 
 ## 5. ERD
-![ERD](https://github.com/Baebin/LocalhostInha_backend/assets/63220297/f51d8b4a-1510-4c8b-a9cf-a568e7aaecd4)
+![ERD](https://github.com/Baebin/LocalhostInha_backend/assets/63220297/10f5fb5f-8c2e-46a7-8809-1a2c261ab9be)
 
 </br>
 
