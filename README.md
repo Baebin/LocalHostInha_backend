@@ -41,6 +41,8 @@
 | | remove | POST | /api/post/remove | | PostRemoveRequestDto | ResponseEntity.ok |
 | | getPost | GET | /api/post/get | ?id={id} | | Json |
 | | getPosts | GET | /api/post/search | ?page={page}&size={size} | | Json |
+| Comment | save | POST | /api/comment/save | | CommentRequestDto | ResponseEntity.ok |
+| | get | POST | /api/post/get | | CommentRequestDto | Json |
 | GeoMap | save | POST | /api/geomap/save | | GeoMapRequestDto | String |
 | | get | POST | /api/geomap/get | | GeoMapGetRequestDto | Json |
 | | getDistance | GET | /api/geomap/getdistance | ?x1={x1}&y1={y1}&x2={x2}&y2={y2} | | Double |
@@ -51,6 +53,8 @@
 | | testGetInfo | GET | /api/test/account/getinfo | ?id={id} | | Json |
 | Post | save | GET | /api/test/post/save | ?id={id}&title={title}&description={description} | | Json |
 | | remove | GET | /api/test/post/remove | ?post_idx={post_idx} | | ResponseEntity.ok |
+| Comment | save | GET | /api/test/comment/save | ?account_idx={account_idx}&post_idx={post_idx}&text={text} | | Json |
+| | get | GET | /api/test/comment/get | ?post_idx={post_idx} | | Json |
 | GeoMap | testSave | GET | /api/test/geomap/save | ?name={name}&coord_x={coord_x}&coord_y={coord_y} | | String |
 | | testGet | GET | /api/test/geomap/get | ?coord_x={coord_x}&coord_y={coord_y} | | Json |
 
